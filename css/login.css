@@ -1,0 +1,44 @@
+@charset "utf-8";
+#welcome {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 302px;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	z-index: 5555;
+	background:#000;
+
+	overflow:hidden;
+}
+#welcome .logo {
+	max-width:320px;
+	margin:  auto;
+}
+.welcome-box{width:100%;height:150px;margin:auto 0;position:absolute;top:50%;}
+.welcome-box-container{width:100%;position:absolute;top: -80%;}
+#welcome .processcontainer {
+	width: 10%;
+	border: 1px solid #212121;
+	
+	margin: 10px auto;
+	height: 4px;
+	border-radius: 10px;
+}
+#welcome #processbar {
+	background: #f00;
+	float: left;
+	height: 100%;
+	text-align: center;
+	border-radius: 10px;
+}
+
+@media(max-width:980px) {
+#welcome .processcontainer {
+	width:270px;
+}
+}

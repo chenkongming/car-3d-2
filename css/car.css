@@ -1,0 +1,477 @@
+@charset "utf-8";
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: Gotham, "黑体", Helvetica, Arial, sans-serif;
+	background: #fff;
+	color: #333;
+	font-weight: bold;
+	font-size: 1em;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+#car_form {
+	position: fixed;
+	top: 10px;
+	right: 0;
+	width: 100%;
+	z-index: 120;
+}
+table {
+	width: 50%;
+	background: #fff;
+	margin: auto;
+	overflow: hidden;
+	font-size: 8px;
+	text-align: center;
+	border: 1px solid #000;
+}
+table td {
+	width: 33.3%;
+}
+table input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 8px;
+}
+#arrowr {
+	position: fixed;
+	top: 50%;
+	right: 10px;
+	z-index: 130;
+	height: 80px;
+	width: 70px;
+	opacity: 0.5;
+}
+#arrowl {
+	position: fixed;
+	top: 50%;
+	left: 10px;
+	z-index: 130;
+	height: 80px;
+	width: 70px;
+	opacity: 0.5;
+}
+#arrowRight {
+	position: absolute;
+	top: -20px;
+	right: 0;
+	cursor: pointer;
+	display: block;
+}
+#arrowLeft {
+	position: absolute;
+	top: -20px;
+	left: 0;
+	cursor: pointer;
+	display: block;
+}
+h5 {
+	font-size: 0.8em;font-weight:bold;
+}
+#vision {
+	position:  fixed;
+	bottom: 5px;
+	left: 0;
+	z-index: 110;
+	width: 100%;
+	overflow: hidden;
+}
+#vision_box {
+	width: 320px;
+	margin: auto;
+	overflow: hidden;
+	height: 38px;
+}
+#vision a:hover{border: 1px solid #333;}
+#vision .aselected{border: 1px solid #333;}
+#ThreeJS {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#carmodel {
+	position: absolute;
+	right: 0;
+	z-index: 120;
+	background-color: rgba(0,0,0,0.1);
+	width: 70px;
+	height: 100%;
+	overflow: hidden;
+}
+#carmodel_box {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+#color-box0,#color-box1,#color-box2,#color-box3,#color-box4{
+	padding-top: 6px;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.car-icon {
+	max-width: 40px;
+	width: 40px;
+	position: absolute;
+	text-align: center;
+	cursor: pointer;
+}
+#carmodel dd {
+	margin: auto;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin-top: 10px
+}
+#control {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 120;
+	height: 100%;
+	width: 70px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.1);
+}
+button {
+	width: 50%;
+	margin: auto;
+	display: block;
+	border-radius: 10px;
+ background:#;
+	text-align: center;
+	margin-top: 10%;
+	height: 32px;
+	line-height: 32px;
+	cursor: pointer;
+}
+#carStyle h5 {
+	font-size: 1.5em;
+	line-height: 2em;
+	padding-bottom: 1em;
+	color: #000;
+	font-weight:bold;
+	text-align: center;
+}
+#carStyle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 4444;
+}
+#carStyle-box {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	top: 30%;
+}
+#carStyle-middle {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	top: -50%;
+}
+#carStyle-box button {
+	margin-top: 2%;
+	line-height: 32px;
+}
+#carStyle-middle img {
+	width:60px;
+	height:60px;
+	margin: 20px;
+	outline: none;
+	cursor: pointer;
+}
+#carStyle-middle img:hover {
+	color: red;
+	border-radius: 98px;
+}
+#carStyle-middle li {
+	width: 100%;
+	text-align: center;
+}
+#control_box {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 120;
+	top: 0;
+	overflow-y: hidden;
+}
+#control_box span {
+	display: block;
+	width: 95%;
+	margin: 15px auto;
+	width: 40px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid #999;
+}
+#color-box0 button,#color-box1 button,#color-box2 button,#color-box3 button,#color-box4 button {
+	outline: none;
+	border: none;
+	display: block;
+	width: 60%;
+	height: 36px;
+	font-family: '宋体';
+	font-size: 0.5em;
+	color: #fff;
+	line-height: 1em;
+	margin: 15px auto;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.color1 {
+	background: url(../images/color1.png) no-repeat center center;
+}
+.color2 {
+	background: url(../images/color2.png) no-repeat center center;
+}
+.color3 {
+	background: url(../images/color3.png) no-repeat center center;
+}
+.color4 {
+	background: url(../images/color4.png) no-repeat center center;
+}
+.color5 {
+	background: url(../images/color5.png) no-repeat center center;
+}
+.color00 {
+	background: url(../images/color11.png) no-repeat center center;
+}
+.color11 {
+	background: url(../images/color22.png) no-repeat center center;
+}
+.color22 {
+	background: url(../images/color33.png) no-repeat center center;
+}
+.color33 {
+	background: url(../images/color44.png) no-repeat center center;
+}
+.color44 {
+	background: url(../images/color55.png) no-repeat center center;
+}
+#ThreeJS img {
+	cursor: pointer;
+}
+#control_box li {
+	margin: auto;
+}
+#carpatch {
+	width: 60%;
+	margin: auto;
+	overflow: hidden;
+}
+#carmodel_box_content {
+	width: 60%;
+	margin: auto;
+	overflow: hidden;
+}
+#carmodel_content {
+	height: 100%;
+}
+.active {
+	width: 48px;
+	height: 34px;
+	border-radius: 5px;
+	border: #333 1px solid;
+ background: ../images/active.png;
+}
+#control_box .activepatch {
+	color: #f00;
+	border: 1px solid #000;
+	background-color: rgb(255,255,255);
+}
+#loaddng-box {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	position: absolute;
+	font-size: 0.5em;
+	
+	text-align: center;
+	z-index: 130;
+	background-color: rgba(0,0,0,0.2);
+}
+#loadding-content{height:190px;width:100%;position:absolute;top:50%;}
+#loadding-contentbox{width:100%;position:absolute;top:-50%}
+progress {
+	display: block;
+	margin: auto;
+	width: 270px;
+	height:6px;
+	border: 1px solid #212121;
+	border-radius: 10px;
+	background-color: #ffffff;
+	color: #c01920; /*IE10*/
+}
+progress::-moz-progress-bar {
+background: #c01920;
+border-radius: 12px;
+}
+progress::-webkit-progress-bar {
+background: #ffffff;
+border-radius: 12px;
+}
+progress::-webkit-progress-value {
+background: #c01920;
+border-radius: 12px;
+}
+#loading {
+	font-size: 8px;
+	line-height: 100px;
+	margin: auto;
+	text-align: center;
+}
+#loadingnum {
+	color: #F00;
+	background: #fff;
+}
+/* #logo {
+	display: block;
+	margin: auto;
+	width: 60%;
+	max-width: 307px;
+	margin-top: 10%;
+	margin-bottom: 100px;
+} */
+
+#vision_box {
+	width: 192px;
+	margin: auto;
+	overflow: hidden;
+	height: 38px;
+}
+#vision a {
+	cursor: pointer;
+	display: block;
+	width: 42px;
+	height: 36px;
+	float: left;
+	
+	margin: 0 10px;
+	border-radius: 5px;
+	border: 1px solid #999;
+	color: #999;
+}
+
+#eye {
+	background: url(../images/eye.png) center center no-repeat;
+}
+#car_clothes {
+	background: url(../images/carmodel.png) center center no-repeat;
+}
+#carClass {
+	background: url(../images/carstyle.png) center center no-repeat;
+}
+
+@media(max-width:980px) {
+.designover {
+	width: 10%;
+	left: 10px;
+	top: 0;
+}
+#carStyle-box {
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+}
+#carStyle-middle {
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	top: -60%;
+}
+#carStyle-box button {
+	margin-top: 4%;
+	line-height: 32px;
+}
+#logo {
+	display: block;
+	margin: auto;
+	width: 80%;
+	max-width: 307px;
+	margin-top: 30%;
+	margin-bottom: 30%;
+}
+progress {
+	display: block;
+	margin: auto;
+	width: 270px;
+	height:6px;
+	border: 1px solid #212121;
+	border-radius: 10px;
+	background-color: #ffffff;
+	color: #c01920; /*IE10*/
+}
+#control_box span {
+	width: 90%;
+	margin: 15px auto;
+	cursor: pointer;
+}
+#carmodel_content img {
+	width: 100%;
+	max-width: 40px;
+	cursor: pointer;
+}
+}
+
+@media(max-width:480px) {
+#carStyle-middle img {
+	margin: 20px;
+	outline: none;
+}
+#carStyle-middle li {
+	width: 100%;
+	text-align: center;
+}
+}
+
+@media(max-width:320px) {
+#carStyle h5 {
+	padding-top: 1em;
+}
+}
+
+@media(max-height:320px) {
+#carStyle h5 {
+	display: none;
+}
+#carStyle {
+	height: 320px;
+	font-size: 0.1em;
+	overflow: hidden;
+}
+#carStyle-middle li {
+	height: 100px
+}
+#carStyle-middle {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	top: -40%;
+}
+}

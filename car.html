@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title style="text-align:center">赫驰车身改色定制</title>
+<meta charset="utf-8">
+<meta name="author" content="灵墨" />
+<meta name="keywords" content="car" />
+<meta name="description" content="广州灵墨" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta HTTP-EQUIV="Pragma" content="no-cache">
+<meta HTTP-EQUIV="Cache-Control" content="no-cache">
+<meta HTTP-EQUIV="Expires" content="0">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/car.css">
+<script  src="js/jquery.min.js"></script>
+<!--<script  src="js/css3-mediaqueries.js"></script>-->
+</head>
+<!--<AUDIO style="display: none"  id="audio1"  soundtrack loop autoplay>
+  <SOURCE type="audio/mp3" src="resource/car.mp3">
+</AUDIO>-->
+<div id='wx_logo' style='margin:0 auto;display:none;' >
+<img src="images/car.png" />
+</div>
+<body oncontextmenu="window.event.returnvalue=false"  style="width:100%;height:100%;">
+<div id="welcome"> 
+<img src="images/bg.png" style="height:100%;width:100%">
+<div class="welcome-box">
+<div class="welcome-box-container">
+<img src="images/logo.png" class="logo" alt="logo">
+  <div class="processcontainer">
+    <div id="processbar" style="width:0%"></div>
+  </div>
+   </div>
+  </div>
+</div>
+ <div id="carStyle" >
+ <img src="images/bg.png" style="height:100%;width:100%">
+  <div id="carStyle-box">
+    <div id="carStyle-middle">
+      <h5>车型选择</h5>
+      <ul>
+        <li> <img src="images/a6.png" class="a6" onclick="_Add1('car1/a6.js')" /></li>
+      <li><img src="images/glk.png" class="GLK" onclick="_Add2('car2/GLK.js')" />
+      <img src="images/baoma.png" class="baoma"  onclick="_Add3('car3/baoma.js')" />
+      <img src="images/kayan.png" class="kayan"  onclick="_Add4('car4/kayan.js')" /></li>
+      <li><img src="images/luhu.png" class="luhu" onclick="_Add5('car5/luhu.js')"></li>
+    </ul>
+  </div>
+</div>
+</div>
+<script type="text/javascript">  
+function setProcess() {
+    var processbar = document.getElementById("processbar");
+    processbar.style.width = parseInt(processbar.style.width) + 1 + "%";
+    if (processbar.style.width == "100%") {
+        window.clearInterval(bartimer);
+        document.getElementById("welcome").style.display = "none";       
+    }
+}
+var bartimer = window.setInterval(function() {
+    setProcess();
+}, 2);
+window.onload = function() {
+    bartimer;
+};
+</script>
+<div id="Interaction" >
+<form id="car_form" style="display:none;">
+<table border="1">
+<caption>汽车物料数据单</caption>
+  <tr><th>部位名称</th><th>材质编号</th><th>材质颜色</th></tr>
+  <tr>
+  <td>车身</td>
+  <td><input value="null" id="che_shen"/></td>
+  <td><input value="" id="che_shen_color"/></td>
+  </tr>
+   <tr>
+  <td>车顶</td>
+  <td><input value="null"  id="che_ding"/></td>
+  <td><input value=""  id="che_ding_color"/></td>
+  </tr>
+  <tr>
+  <td>门把</td>
+  <td><input value="null" id="che_men"/></td>
+  <td><input value="" id="che_men_color"/></td>
+  </tr>
+  <tr>
+  <td>视镜</td>
+  <td><input value="null" id="che_jing"/></td>
+  <td><input value="" id="che_jing_color"/></td>
+  </tr>
+  <tr>
+  <td>轮毂</td>
+  <td><input value="null" id="che_lun"/></td>
+  <td><input value="" id="che_lun_color"/></td>
+  </tr>
+ 
+    </table>
+
+  </form>
+  <div id="arrowr"> 
+  <img id="arrowRight" src="images/arrowr.png" onclick="controlShow();" > </div>
+  <div id="arrowl">
+   <img id="arrowLeft"  src="images/arrowl.png" onclick="controlShow();" > </div>
+  <div  id="carmodel" style="display:none">
+    <div id="carmodel_box" >
+      <dl  id="carmodel_content" style="display:none">
+        <dd onclick="_Add1('car1/a6.js')"> <img  class="car-icon" src="images/car1.png" /></dd>
+        <dd onclick="_Add2('car2/GLK.js')"><img  class="car-icon" src="images/car2.png" /></dd>
+        <dd onclick="_Add3('car3/baoma.js')"><img  class="car-icon" src="images/car3.png" /></dd>
+        <dd  onclick="_Add4('car4/kayan.js')"><img  class="car-icon" src="images/car4.png" /></dd>
+        <dd onclick="_Add5('car5/luhu.js')"><img  class="car-icon" src="images/car5.png" /></dd>
+      </dl>
+      <div id="colorStyle" style="display:block">
+       
+         
+          <script>
+		 
+			 
+          </script>
+          
+        
+      </div>
+    </div>
+  </div>
+  <div id="loaddng-box">
+  <img src="images/bg.png" style="height:100%;width:100%">
+  <div id="loadding-content">
+  <div id="loadding-contentbox">
+  <img src="images/logo.png" class="logo2" alt="logo">
+    <div id="loadingnum"></div>
+    <progress value="0" max="100" id="loading"></progress>
+    </div>
+  </div>
+  </div>
+  <div id="control" style="display:none">
+    <ul id="control_box" style="display:block">
+      <li id="carpatch"> 
+     
+      <span style="background:url(images/cheke.png) no-repeat center center" onclick="choosemain()" ></span> 
+      <span style="background:url(images/cheding.png) no-repeat center center" onclick="choosechild();changeMaterial(che_ding,che_ding_color)" ></span> 
+      <span style="background:url(images/menba.png) no-repeat center center" onclick="choosechild();changeMaterial(che_men,che_men_color)" ></span> 
+      <span style="background:url(images/shijing.png) no-repeat center center" onclick="choosechild();changeMaterial(che_jing,che_jing_color)"></span> 
+      <span style="background:url(images/lungu.png) no-repeat center center"  onclick="choosechild2();changeMaterial(che_lun,che_lun_color)" ></span> 
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="vision">
+<div id="vision_box">
+<a   id="carClass" onclick="carmodel();controlShow2();"></a>  
+<a id="car_clothes"  onclick="choosemain();controlShow2();"></a>
+<a id="eye" onClick="showA()"></a> 
+</div>
+</div>
+<div id="ThreeJS"> </div>
+<script type="x-shader/x-vertex" id="vertexShader">
+varying vec3 vWorldPosition;
+void main() {
+        vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+        vWorldPosition = worldPosition.xyz;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      }
+</script> 
+<script type="x-shader/x-fragment" id="fragmentShader">
+      uniform vec3 topColor;
+      uniform vec3 bottomColor;
+      uniform float offset;
+      uniform float exponent;
+        varying vec3 vWorldPosition;
+void main() {
+      float h = normalize( vWorldPosition + offset ).y;
+      gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
+      }
+</script> 
+<!--<script src="js/three.min.js"></script> 
+<script  src="js/OrbitControls.js"></script> -->
+<script>
+var layer=document.createElement("div");
+layer.id="layer";layer.innerHTML="温馨提示,手机横屏更好体验!";
+layer.style.color="#fff";
+var isfirst=true;
+function func()
+{if(isfirst){
+	var style=
+	{
+		fontSize:"10px",
+		position:"absolute",
+		zIndex:10,
+		width:"100px",
+		height:"100px",
+		right:"10px",
+		top:"10px"
+	}
+	for(var i in style)
+		layer.style[i]=style[i];	
+	if(document.getElementById("layer")==null)
+	{
+		document.body.appendChild(layer);
+		setTimeout("document.body.removeChild(layer)",5000)	
+	};
+};
+isfirst=false;
+};
+
+var Iscontrol=true;
+function controlShow(){
+	if(Iscontrol){$("#control").fadeIn("slow");;
+  $("#carmodel").fadeIn("slow");$("#arrowl").css("left","75px");$("#arrowr").css("right","75px");
+  document.getElementById("arrowLeft").src="images/arrowr.png"; 
+  document.getElementById("arrowRight").src="images/arrowl.png";
+  Iscontrol=false;}
+    else{$("#control").hide();
+    $("#carmodel").hide();
+    $("#arrowl").css("left","10px");
+    $("#arrowr").css("right","10px");
+	document.getElementById("arrowLeft").src="images/arrowl.png";  
+  document.getElementById("arrowRight").src="images/arrowr.png";
+    Iscontrol=true;
+	 }
+}
+function controlShow2(){
+	if(Iscontrol){$("#control").fadeIn("slow");;
+  $("#carmodel").fadeIn("slow");$("#arrowl").css("left","75px");$("#arrowr").css("right","75px");
+  document.getElementById("arrowLeft").src="images/arrowr.png"; 
+  document.getElementById("arrowRight").src="images/arrowl.png";Iscontrol=false;
+  }
+   
+	 
+}
+var isashow=true;
+function showA(){
+  if(isashow){$("#car_form").css('display','block');isashow=false;}
+  else{$("#car_form").css("display","none"); isashow=true; }
+  };
+
+
+function load (){
+    document.getElementById("control").addEventListener('touchstart',touch,false);
+    document.getElementById("carmodel").addEventListener('touchstart',touch,false);
+    document.getElementById("ThreeJS").addEventListener('touchstart',touch2,false);
+}
+window.addEventListener('load',load,false);
+function touch(event){
+    var event = event || window.event;
+    if(event.type=="touchstart"){
+       controls.enabled=false;
+    }
+}
+function touch2(event){
+    var event = event || window.event;
+    if(event.type=="touchstart"){
+      controls.enabled=true;
+    }
+}
+$(document).ready(function(){
+    $("#carpatch span").click(function() {
+    $("#colorStyle img[class~='active']").removeClass("active");
+    $(this).addClass("activepatch").siblings().removeClass("activepatch");
+    });
+    $("#carmodel_content .car-icon").click(function() {
+    $("#carmodel_content .car-icon").removeClass("active");
+    $(this).addClass("active");
+    });
+    $("#colorStyle img").click(function() {   
+    $(this).addClass("active").siblings().removeClass("active");
+    })
+    $("#carStyle img").click(function() {
+    $("#carStyle").css("display","none");
+    })
+  });
+  var flag=true;
+  function carmodel(){
+   $("#colorStyle").css("display","none");
+   $("#carmodel_content").css("display","block");
+   };
+    var iscarbox=true;
+  function choosemain(){
+    $("#chinldcolor00").css("display","block");
+	$("#chinldcolor10").css("display","block");
+	$("#chinldcolor20").css("display","block");
+	$("#chinldcolor30").css("display","block");
+	$("#chinldcolor40").css("display","block");
+	
+    $("#chinldcolor01").css("display","none");
+	$("#chinldcolor11").css("display","none");
+	$("#chinldcolor21").css("display","none");
+	$("#chinldcolor31").css("display","none");
+	$("#chinldcolor41").css("display","none");
+	 $("#chinldcolor02").css("display","none");
+	 $("#chinldcolor12").css("display","none");
+	 $("#chinldcolor22").css("display","none");
+	 $("#chinldcolor32").css("display","none");
+	 $("#chinldcolor42").css("display","none");
+    $("#colorStyle").css("display","block");
+	  $("#carmodel_content").css("display","none");
+  };
+   function choosechild(){
+   $("#chinldcolor00").css("display","none");
+   $("#chinldcolor10").css("display","none");
+   $("#chinldcolor20").css("display","none");
+   $("#chinldcolor30").css("display","none");
+   $("#chinldcolor40").css("display","none");
+ 
+   $("#chinldcolor02").css("display","none");
+	 $("#chinldcolor12").css("display","none");
+	 $("#chinldcolor22").css("display","none");
+	 $("#chinldcolor32").css("display","none");
+	 $("#chinldcolor42").css("display","none");
+    $("#chinldcolor01").css("display","block");
+	$("#chinldcolor11").css("display","block");
+	$("#chinldcolor21").css("display","block");
+	$("#chinldcolor31").css("display","block");
+	$("#chinldcolor41").css("display","block");
+   $("#colorStyle1").css("display","block");
+   $("#carmodel_content").css("display","none");
+  };
+    function choosechild2(){
+    $("#chinldcolor00").css("display","none");
+   $("#chinldcolor10").css("display","none");
+   $("#chinldcolor20").css("display","none");
+   $("#chinldcolor30").css("display","none");
+   $("#chinldcolor40").css("display","none");
+   
+    $("#chinldcolor01").css("display","none");
+	$("#chinldcolor11").css("display","none");
+	$("#chinldcolor21").css("display","none");
+	$("#chinldcolor31").css("display","none");
+	$("#chinldcolor41").css("display","none");
+   $("#chinldcolor02").css("display","block");
+	 $("#chinldcolor12").css("display","block");
+	 $("#chinldcolor22").css("display","block");
+	 $("#chinldcolor32").css("display","block");
+	 $("#chinldcolor42").css("display","block");
+   $("#colorStyle1").css("display","block");
+   $("#carmodel_content").css("display","none");
+  };
+  $("#vision_box a").click(function(){$("#vision_box a").removeClass("aselected");$(this).addClass("aselected")});
+</script> 
+<script>
+  // 获取节点
+  if(window.innerWidth <= 300){
+  var block = document.getElementById("control_box");
+  var oH;
+  // 绑定touchstart事件
+  block.addEventListener("touchstart", function(e) {
+   console.log(e);
+   var touches = e.touches[0];
+   
+   oH = touches.clientY - block.offsetTop;
+   //阻止页面的滑动默认事件
+   document.addEventListener("touchmove",defaultEvent,false);
+  },false)
+ 
+  block.addEventListener("touchmove", function(e) {
+   var touches = e.touches[0];
+
+   var oTop = touches.clientY - oH;
+   if(oTop < -window.innerHeight/1.5) {
+   oTop = 0;
+   }
+   if(oTop > window.innerHeight/1.5) {
+   oTop = 0;
+   }
+    block.style.top = oTop + "px";
+  },false);
+   
+  block.addEventListener("touchend",function() {
+   document.removeEventListener("touchmove",defaultEvent,false);
+  },false);
+  function defaultEvent(e) {
+   e.preventDefault();
+  }
+  }
+</script> 
+<script src="js/lingmojs.js">
+ </script>
+</body>
+</html>
